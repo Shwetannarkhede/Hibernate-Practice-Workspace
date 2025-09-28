@@ -1,5 +1,6 @@
 package com.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,6 +15,7 @@ public class Employee {
 	private int empid;
     private String empname;
     private int salary;
+    @Column(unique = true)
     private String email;
     private String address;
 	
