@@ -20,7 +20,7 @@ public class HotelDao {
 
 		Hotel h = new Hotel();
 		
-		h.setName("Ramainternational");
+		h.setName("lemonTree");
 		h.setLocation("chh.sambhajinagar");
 		ss.persist(h);
 

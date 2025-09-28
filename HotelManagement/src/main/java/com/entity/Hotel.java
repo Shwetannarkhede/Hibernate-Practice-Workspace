@@ -1,5 +1,6 @@
 package com.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,8 +12,12 @@ public class Hotel {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-private int hotelId;        
-private String Name;   
+
+private int hotelId; 
+
+@Column(nullable = false)
+private String Name;  
+
 private String location;
 
 public int getHotelId() {
