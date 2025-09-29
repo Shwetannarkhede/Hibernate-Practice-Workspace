@@ -20,8 +20,8 @@ public class MainClass {
 		Transaction tr = ss.beginTransaction();
 
 		Student s = new Student();
-		s.setStud_id(1);
-		s.setName("shweta");
+		s.setStud_id(2);
+		s.setName("komla");
 		s.setAddress("pune");
 		s.setAge(22);
 
