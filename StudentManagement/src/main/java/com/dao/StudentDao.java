@@ -24,8 +24,18 @@ public class StudentDao {
 		Transaction tr = ss.beginTransaction();
 
 		Student b = new Student();
+		String hqlQuery = "insert into Student(stud_id, name,address,age)Values (:stud_id,:name,:address,:age)";
+		MutationQuery query = ss.createNativeMutationQuery(hqlQuery);
+		query.setParameter("stud_id", 3);
+		query.setParameter("name", "malvi");
+		query.setParameter("address", "chh.sambhajinagar");
+		query.setParameter("age", 23);
+		query.executeUpdate();
 		
-	
+		System.out.println("Data is inserted...");
+		
+		tr.commit();
+		ss.close();
 	}
 
 

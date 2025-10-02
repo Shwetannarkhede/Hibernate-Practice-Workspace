@@ -8,9 +8,11 @@ public class EmployeeController {
 		//ee.insertData();
 		//ee.updateData();
 		//ee.DeleteData();
-		ee.SingleGetData();
+		//ee.SingleGetData();
+		ee.GetAllData();
 		
 		
 	}
 
 }
+

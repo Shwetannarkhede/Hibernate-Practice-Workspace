@@ -23,4 +23,9 @@ public class EmployeeService {
 		ed.SingleGetData();
 	}
 	
+	public void GetAllData() {
+		EmployeeDao ed=new EmployeeDao();
+		ed.GetAllData();
+	}
+	
 }

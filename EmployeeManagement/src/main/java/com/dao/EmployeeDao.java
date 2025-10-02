@@ -1,11 +1,18 @@
 package com.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+import org.hibernate.query.criteria.HibernateCriteriaBuilder;
+import org.hibernate.query.criteria.JpaCriteriaQuery;
 
 import com.entity.Employee;
+
+import jakarta.persistence.criteria.Root;
 
 public class EmployeeDao {
 	public void insertData() {
@@ -102,6 +109,34 @@ public void SingleGetData() {
 
 	tr.commit();
 	ss.close();
+}
+
+public void GetAllData() {
+	Configuration cfg = new Configuration();
+	cfg.configure("hibernate.cfg.xml");
+	cfg.addAnnotatedClass(Employee.class);
+
+	SessionFactory sf = cfg.buildSessionFactory();
+	Session ss = sf.openSession();
+	Transaction tr = ss.beginTransaction();
+	
+	
+	 HibernateCriteriaBuilder hcb = ss.getCriteriaBuilder();
+	 JpaCriteriaQuery<Employee> cq=hcb.createQuery(Employee.class);
+	 Root<Employee> e=cq.from(Employee.class);
+	 cq.select(e);
+	 
+	 
+	 Query<Employee> query =ss.createQuery(cq);
+	 List<Employee> list =query.list();
+	 
+	 for(Employee employee : list) {
+		 System.out.println(employee);
+	 }
+	 
+	 tr.commit();
+	 ss.close();
+	 
 }
 
 
