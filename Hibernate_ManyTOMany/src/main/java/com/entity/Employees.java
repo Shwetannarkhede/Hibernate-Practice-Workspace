@@ -2,6 +2,7 @@ package com.entity;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -27,7 +28,7 @@ public class Employees {
     
 	@ManyToMany
 	List<Departments> dept;
-  //Departments dept;
+
 
 	public int getEmpid() {
 		return empid;

@@ -38,7 +38,8 @@ public class MainClass {
 		e1.setSalary(80000);
 		e1.setEmail("shweta@gmail.com");
 		e1.setAddress("pune");
-		e1.setDept(Arrays.asList(d, d1)); 
+		e1.setDept(Arrays.asList(d)); 
+		//e1.setDept(d); ...Error
 		
 
 
@@ -86,6 +87,12 @@ public class MainClass {
 		d.setEmp(list);
 		d1.setEmp(list);
 		d2.setEmp(list);
+		
+		e1.setDept(list1);
+		e2.setDept(list1);
+		e3.setDept(list1);
+		e4.setDept(list1);
+		
 
 		ss.persist(d);
 		ss.persist(d1);
